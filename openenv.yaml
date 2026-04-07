@@ -1,0 +1,31 @@
+id: email-inbox-env
+name: Email Inbox Manager Environment
+description: An environment where an AI agent manages and classifies emails.
+
+observation_space:
+  type: dict
+  fields:
+    id: int
+    subject: str
+    body: str
+    type: str
+
+action_space:
+  type: discrete
+  actions:
+    - mark_spam
+    - mark_important
+    - reply
+    - archive
+    - escalate
+
+reward:
+  description: Rewards correct classification and penalizes incorrect actions.
+
+tasks:
+  - name: easy
+    description: Classify emails correctly
+  - name: medium
+    description: Handle inbox with consistent decisions
+  - name: hard
+    description: Manage full inbox with optimized actions
