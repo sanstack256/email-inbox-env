@@ -3,13 +3,18 @@ name = "email-inbox-env"
 version = "0.1.0"
 description = "Email Inbox Manager OpenEnv environment"
 authors = [
-    { name = "Sanjeev N S " }
+    { name = "Your Name" }
 ]
+
 dependencies = [
     "fastapi",
     "uvicorn",
-    "pydantic"
+    "pydantic",
+    "openenv>=0.2.0"
 ]
+
+[project.scripts]
+server = "app:app"
 
 [build-system]
 requires = ["setuptools"]
