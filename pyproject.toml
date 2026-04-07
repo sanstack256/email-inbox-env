@@ -1,0 +1,16 @@
+[project]
+name = "email-inbox-env"
+version = "0.1.0"
+description = "Email Inbox Manager OpenEnv environment"
+authors = [
+    { name = "Sanjeev N S " }
+]
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "pydantic"
+]
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
