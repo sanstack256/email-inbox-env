@@ -1,3 +1,5 @@
+# tasks.py
+
 def easy_task_grader(actions, emails):
     total = len(emails)
     if total == 0:
@@ -63,3 +65,11 @@ def hard_task_grader(actions, emails):
         return 0.9
 
     return score
+
+
+
+TASKS = [
+    {"name": "easy", "grader": easy_task_grader},
+    {"name": "medium", "grader": medium_task_grader},
+    {"name": "hard", "grader": hard_task_grader},
+]
