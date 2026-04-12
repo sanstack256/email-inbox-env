@@ -24,8 +24,8 @@ reward:
 
 tasks:
   - name: easy
-    grader: easy_task_grader
+    grader: tasks.easy_task_grader
   - name: medium
-    grader: medium_task_grader
+    grader: tasks.medium_task_grader
   - name: hard
-    grader: hard_task_grader
+    grader: tasks.hard_task_grader
