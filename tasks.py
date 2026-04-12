@@ -32,6 +32,17 @@ def hard_task_grader(actions, emails):
         else:
             score -= 1  # penalty for wrong decisions
 
+def easy_task_grader(actions, emails):
+    # simple logic
+    score = 0.6
+    return score
+
+
+def medium_task_grader(actions, emails):
+    # slightly different
+    score = 0.7
+    return score
+
     # normalize score between 0 and 1
     max_score = len(emails)
     final_score = max(0, score) / max_score
