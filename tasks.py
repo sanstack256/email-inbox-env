@@ -1,5 +1,5 @@
 def get_type(email):
-    # handle BOTH dict and object
+
     if isinstance(email, dict):
         return email.get("type", "")
     return getattr(email, "type", "")
