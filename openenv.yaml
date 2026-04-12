@@ -24,8 +24,8 @@ reward:
 
 tasks:
   - name: easy
-    description: Classify emails correctly
+    grader: easy_task_grader
   - name: medium
-    description: Handle inbox with consistent decisions
+    grader: medium_task_grader
   - name: hard
-    description: Manage full inbox with optimized actions
+    grader: hard_task_grader
