@@ -17,7 +17,6 @@ class EmailReward(BaseModel):
     reward: float
 
 
-
 class EmailEnvironment:
     def __init__(self):
         self.emails = emails
@@ -32,7 +31,6 @@ class EmailEnvironment:
 
         reward = 0
 
-        # reward logic
         if action == "mark_spam" and current_email.type == "spam":
             reward = 1
         elif action == "mark_important" and current_email.type == "work":
@@ -46,22 +44,16 @@ class EmailEnvironment:
         else:
             reward = -1
 
-        # move to next email
         self.current_index += 1
 
         done = self.current_index >= len(self.emails)
 
         if not done:
-            next_email = self.emails[self.current_index]
+            next_email = EmailObservation(**self.emails[self.current_index])
         else:
             next_email = None
 
-        if next_email:
-            next_obs = EmailObservation(**next_email)
-        else:
-            next_obs = None
-
-        return next_obs, EmailReward(reward=reward), done, {}
+        return next_email, EmailReward(reward=reward), done, {}
 
     def state(self):
         return {
